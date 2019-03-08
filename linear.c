@@ -1,10 +1,10 @@
 /* 
- * Program that generates ten thousands random numbers 
- * Between 0 and 99, and then outputs the number that
- * occurs the most and least and how many times those
- * two occured
- * By Zachary Gilham
- * For Mr. McIlveen's ICS4U class
+ * Generates ten thousand random numbers between 0 and 99.
+ *
+ * Output: The numbers with the highest and lowest frequencies, and the highest and lowest frequencies.
+ * 
+ * Original program by By Zachary Gilham for Mr. McIlveen's ICS4U class
+ *
  */
 
 // Import the needed libraries 
