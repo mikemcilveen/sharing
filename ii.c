@@ -1,3 +1,7 @@
+// A sorting program. 
+// Uses insertion sort to create an array of indicies, p, which give the index of the final sorted position of an array element in a.  
+// The position index is then used to create an array of index pointers, q, to the sorted elements.
+
 #include <stdio.h>
 #include <stdlib.h>
 
