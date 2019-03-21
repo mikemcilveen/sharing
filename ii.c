@@ -6,7 +6,11 @@ int main ()
     
     
     // initialize array
-    int a[] = {2,1,4,3,5}
+    int a[] = {2,1,4,3,5};
+    
+    // initialize index array
+    int p[5] = {0,1,2,3,4};
+    
     int j = 0;
     for (int i = 1; i < 5; ++i)
     {
@@ -38,4 +42,5 @@ int main ()
     {
         printf("%i ", a[p[i]]);
     }
+    printf("\n\n");
 }
