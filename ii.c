@@ -5,10 +5,11 @@ int main ()
 {
     
     
-    // initialize array
+    // initialize array to be sorted
     int a[] = {2,1,1,3,0};
     
     // initialize index array
+    // p[i] = index of a[i] in the sorted array
     int p[] = {0,1,2,3,4};
     
     int j = 0;
@@ -39,6 +40,7 @@ int main ()
     }
     
     // sorted 
+    // q[i] = the index of the element in a, with position i in the sorted array
     int q[5];
     for (int i = 0; i < 5; ++i)
     {
