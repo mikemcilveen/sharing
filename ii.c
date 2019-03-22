@@ -26,10 +26,10 @@ int main ()
         {
             j = j - 1;
         }
-        ap[j+1] = i;
+        ap[i] = j+1;
         for (int k = 0; k < i; ++k)
         {
-            if (ap[k] <= j + 1)
+            if (ap[k] >= j + 1)
             {
                 ap[k] = ap[k] + 1;
             }
