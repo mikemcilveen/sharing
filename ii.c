@@ -1,6 +1,6 @@
 // A sorting program. 
-// Uses insertion sort to create an array of indicies, p, which give the index of the final sorted position of an array element in a.  
-// The position index is then used to create an array of index pointers, q, to the sorted elements.
+// Uses insertion sort to create an array of indicies, ap, which give the index of the final sorted position of an array element in a.  
+// The position index is then used to create an array of index pointers, sp, to the sorted elements.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,8 +13,8 @@ int main ()
     int a[] = {2,1,1,3,0};
     
     // initialize index array
-    // p[i] = index of a[i] in the sorted array
-    int p[] = {0,1,2,3,4};
+    // ap[i] = index of a[i] in the sorted array
+    int ap[] = {0,1,2,3,4};
     
     int j = 0;
     for (int i = 1; i < 5; ++i)
@@ -22,16 +22,16 @@ int main ()
         // start comparing element at i with sorted elements before position i
         j = i - 1;
         
-        while (j >= 0 && a[i] < a[p[j]])
+        while (j >= 0 && a[i] < a[ap[j]])
         {
             j = j - 1;
         }
-        p[j+1] = i;
+        ap[j+1] = i;
         for (int k = 0; k < i; ++k)
         {
-            if (p[k] <= j + 1)
+            if (ap[k] <= j + 1)
             {
-                p[k] = p[k] + 1;
+                ap[k] = ap[k] + 1;
             }
         }
     }
@@ -45,15 +45,15 @@ int main ()
     
     // sorted 
     // q[i] = the index of the element in a, with position i in the sorted array
-    int q[5];
+    int sp[5];
     for (int i = 0; i < 5; ++i)
     {
-        q[p[i]] = i;
+        sp[ap[i]] = i;
     }
     printf("\n\nSorted:\n");
     for (int i = 0; i < 5; ++i)
     {
-        printf("%i ", q[i]);
+        printf("%i ", a[sp[i]]);
     }
     printf("\n\n");
 }
