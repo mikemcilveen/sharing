@@ -43,7 +43,7 @@ int main ()
         // Start comparing element at i with sorted elements before position i.
         // Sorted elements are referenced in a, by q[i].
         j = i - 1;
-        // When the while loop quits, the correct index in s for a[i] will be j-1.
+        // When the while loop quits, the correct index in s for a[i] will be j+1.
         while (j >= 0 && a[i] < a[q[j]])
         {
             j = j - 1;
