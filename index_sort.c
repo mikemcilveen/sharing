@@ -54,7 +54,6 @@ int main ()
         q[j+1] = i;
         
         // Shifting items right, but with indicies we simply increment.
-        
         for (int k = 0; k < i; ++k)
         {
             if (p[k] >= j + 1)
