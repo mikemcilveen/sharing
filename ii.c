@@ -1,7 +1,3 @@
-// A sorting program. 
-// Uses insertion sort to create an array of indicies, ap, which give the index of the final sorted position of an array element in a.  
-// The position index is then used to create an array of index pointers, sp, to the sorted elements.
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,7 +6,7 @@ int main ()
     
     
     // initialize array to be sorted
-    int a[] = {2,1,1,3,0};
+    int a[] = {21,14,11,13,30};
     
     // initialize index array
     // ap[i] = index of a[i] in the sorted array
@@ -22,7 +18,7 @@ int main ()
         // start comparing element at i with sorted elements before position i
         j = i - 1;
         
-        while (j >= 0 && a[i] < a[ap[j]])
+        while (j >= 0 && a[i] < a[j])
         {
             j = j - 1;
         }
@@ -34,6 +30,12 @@ int main ()
                 ap[k] = ap[k] + 1;
             }
         }
+    }
+    // original 
+    printf("\n\nPointers:\n");
+    for (int i = 0; i < 5; ++i)
+    {
+        printf("%i ", ap[i]);
     }
     
     // original 
@@ -57,3 +59,4 @@ int main ()
     }
     printf("\n\n");
 }
+
