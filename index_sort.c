@@ -1,24 +1,26 @@
 /* This program uses an insertion sort to sort the indicies of an array, a, in ascending order.
  * 
  * That is, rather than moving the elements of the array a, we create an array, q, 
- * of indicies in which q(i) is the index in a of element i in the sorted array, s.
+ * of indicies in which q(i) is the index in a of s(i) in the sorted array, s.
  * That is, s(i) = a(q(i)).   -(1)
+ * We can iterate over q to generate s.
  * 
- * Furthermore, we create another array of indicies, p, in which p(i) is the index
- * in s of element i in a. 
+ * We also create another array of indicies, p, in which p(i) is the index of a(i) in s. 
+ * This means that p holds the position in the sorted array of each element of a.
+ * For example, p(0) is the index (or position) in s for a(0), p(1) is the index in s for a(1), etc. 
  * That is, a(i) = s(p(i)).   -(2)
+ * This array is generated using Insertion Sort.
  * 
- * When we combine the definitions (1) and (2) above, we have:
- * s(p(i)) = a(q(p(i))) , from (1) upon substituting p(i) for i; and,
- * s(p(i)) = a(i), from (2), so we see:
- * q(p(i)) = i
- * 
- * Finally, it is noted that p and q are inverse functions.
+ * Note that p and q are inverse functions.
  * For example, if p(2) = 3, then q(3) = 2. Generally we have:
- * p(q(i)) = q(p(i)) = i. This fact is used to keep the array q up to date with the array p.
+ * p(q(i)) = q(p(i)) = i. 
+ * This fact is used to keep the array q up to date with the array p.
  *   
+ * Indeed, when we consider the definitions (1) and (2) above, we have:
+ * s(p(i)) = a(q(p(i))) , from (1) upon substituting p(i) for i; and,
+ * s(p(i)) = a(i), from (2), so we see that
+ * a(q(p(i))) = a(i), which shows that q(p(i)) = i. 
  */
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,13 +56,14 @@ int main ()
         q[j+1] = i;
         
         // Shifting items right, but with indicies we simply increment.
+        // At this point, only elements 0 through i-1 are sorted and need to be considered.
         for (int k = 0; k < i; ++k)
         {
             if (p[k] >= j + 1)
             {
                 // Increment indicies in p that reference elements in s that need to shift right.
                 p[k] = p[k] + 1;
-                // Update the index in q for the element in s that shifted right.
+                // Update the element in q for the element in s that shifted right.
                 q[p[k]] = k;
           
             }
